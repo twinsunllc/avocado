@@ -15,7 +15,7 @@ module Avocado
 
       def json?
         JSON.parse @response.body
-      rescue JSON::ParserError, TypeError
+      rescue NoMethodError, JSON::ParserError, TypeError
         false
       end
   end
